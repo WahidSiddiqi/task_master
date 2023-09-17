@@ -35,3 +35,5 @@ class Project(models.Model):
         default=STATUS[0][0]
     )
     # tasks = models.ForeignKey(Task, on_delete=models.CASCADE)
+
+class Test 
