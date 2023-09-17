@@ -20,13 +20,17 @@ Priority = (
 # Comment
 
 
+
+
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.CharField(max_length=100)
     created_date = models.DateTimeField(auto_now_add=True)
 
 
+
 class Project(models.Model):
+
 
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
