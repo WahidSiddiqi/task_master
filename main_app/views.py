@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Project
+from .models import Task
 
 # HOME
 def home(request):
@@ -20,6 +21,10 @@ class ProjectDetail(DetailView):
   template_name = 'projects/detail.html'
 
 # TASK VIEWS
+def task_list(request):
+  tasks = Task.objects.all()
+  return render(request, 'task_list.html', {'tasks' : tasks})
+  
 # COMMENT VIEWS
 # PROFILE VIEWS
 
