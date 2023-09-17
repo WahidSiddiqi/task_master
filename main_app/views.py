@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Project
 from .models import Task
+
+from .models import Task
 # registration imports
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -19,6 +21,11 @@ def about(request):
     return render(request, 'about.html')
 
 # ADMIN
+
+#TASK
+def task_list(request):
+    tasks = Task.objects.all()
+    return render(request, 'task_list.html', {'tasks': tasks})
 
 
 # PROJECT VIEWS
