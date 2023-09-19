@@ -1,4 +1,4 @@
-{% load static %}
+ {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +15,60 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 </head>
+  <body>
+    <div class="wrapper"></div>
+    <aside class="sidebar"></aside>
+    <h2 class="sidebar-logo">Task Master</h2>
+    <ul class="sidebar-nav>
+  
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'projects_index' %}">Projects</a></li>
+        <li><a href="{% url 'team' %}">Team</a></li>
+        <li><a href="{% url 'profile_detail' user.id %}">Profile</a></li>
+        <li><a href="{% url 'logout' %}">Log Out</a></li>
+        {% else %}
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="{% url 'login' %}">Log In</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        {% endif %}
+      </ul>
+    </aside>
 
-<body>
-  <header class="navbar-fixed">
-    <nav>
+    <main class="content-container">
+      <section class="details-section">
+        <h3>Title: {{ object.title }}</h3>
+        <p>Description: {{ object.description }}</p>
+        <p>Status: {{ object.status }}</p>
+        <p>Due Date: {{ object.due_date }}</p>
+      </section>
+
+      {% block content %}
+      {% endblock %}
+    </main>
+  </div>
+
+  <footer class="page-footer">
+    <div class="center">
+      <a href="/admin">Admin</a>
+      All Rights Reserved, &copy; 2023 Task Master &nbsp;
+    </div>
+  </footer>
+
+  <script>
+    M.AutoInit();
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+    <!-- <nav>
       <div class="nav-wrapper">
         <ul>
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Task Master</a></li>
@@ -35,22 +85,5 @@
           <li><a href="{% url 'login' %}">Log In</a></li>
           {% endif %}
         </ul>
-      </div>
-    </nav>
-  </header>
-  <main class="container">
-    {% block content %}
-    {% endblock %}
-  </main>
-  <footer class="page-footer">
-
-    <div class="center">
-      <a href="/admin">Admin</a>
-      All Rights Reserved, &copy; 2023 Task Master &nbsp;
-    </div>
-  </footer>
-  <script>
-    M.AutoInit();
-  </script>
-</body>
-</html>
+      </div>  -->
+      

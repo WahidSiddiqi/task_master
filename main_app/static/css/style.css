@@ -1,20 +1,60 @@
 
 body {
+    font-family: 'Source Sans 3', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+.wrapper {
     display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
-text {font-family: 'Source Sans 3', sans-serif;
 }
 
-/* the best style for footer */
-main {
-    flex: 1 0 auto;
+.sidebar {
+    width: 25%;
+    height: 100vh;
+    background-color: #333;
+    padding: 15px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
-footer.page-footer {
-    padding-top: 0;
-    text-align: left;
+.sidebar-logo {
+    color: white;
 }
 
+.sidebar-nav {
+    list-style-type: none;
+    padding: 0;
+    background: blue;
+}
+
+.sidebar-nav li {
+    padding: 8px 0;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.content-container {
+    width: 75%;
+    padding: 15px;
+}
+
+.details-section {
+    background-color: #f5f5f5;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.page-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
 
