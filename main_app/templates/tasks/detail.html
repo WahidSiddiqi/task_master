@@ -10,6 +10,8 @@
 <h6><span class="bold">Description:</span> {{ task.description}}</h6>
 <h6>Project: {{ project.title }}</h6>
 <h6>Status: {% if task.status == "P" %}
+<h6>Due Date: {{ task.due_date }}</h6>
+
   In Process
   {% elif task.status == "H" %}
   On Hold
