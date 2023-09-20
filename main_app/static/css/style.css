@@ -66,7 +66,8 @@ html {
 .sidebar {
     background-color: rgb(1, 1, 34);
     /* height: 100vh; */
-    width: 30%;
+    width: 15%;
+    min-width: 15%;
     min-height: 100vh;
 
     color: white;
@@ -161,4 +162,9 @@ table.highlight>tbody>tr:hover {
 table.highlight>tbody>tr {
     color: black
         /* whatever color you want */
+}
+
+th {
+    text-decoration: underline;
+    font-size: 24px;
 }
